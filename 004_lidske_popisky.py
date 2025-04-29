@@ -40,6 +40,8 @@ def main():
 
     # Read and process input data
     df = pd.read_json(os.path.join('data_raw', 'papezstvo_raw.json'))
+    if "id" in df.columns.to_list():
+        df = df.drop(columns="id")
     
     print(df)
 
